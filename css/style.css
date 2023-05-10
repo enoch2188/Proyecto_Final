@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap");
+.grid {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 3, auto;
+}
+
+@media only screen and (min-width: 1023px) {
+  main {
+    display: grid;
+    grid-template-areas: "imgTitulo imgTitulo" "titulo titulo" "texto texto" "parrafo imgMain";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(3, auto);
+  }
+  main .imgTitulo {
+    grid-area: imgTitulo;
+  }
+  main .titulo {
+    grid-area: titulo;
+  }
+  main .texto {
+    grid-area: parrafo;
+  }
+  main .imgMain {
+    grid-area: imgMain;
+  }
+  main .foot {
+    color: gray;
+    padding-left: 109px;
+  }
+}
+@media (max-width: 768px) {
+  .foot {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .imgMain {
+    max-width: auto;
+    height: auto;
+    overflow: hidden;
+  }
+}
+@media (max-width: 992px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+}
+.translate {
+  transform: translate(100px, 100px);
+}
+
+.img-fluida {
+  width: 100%;
+  height: auto;
+}
+
+img {
+  border-radius: 20px;
+}
+
+.imgEquipos {
+  block-size: 450px;
+}
+
+.cardEquipos {
+  background-color: dimgray;
+}
+
+div.imgTitulo img {
+  width: 100%;
+  height: 50vh;
+  max-width: 100%;
+}
+
+.colorBody {
+  background-image: linear-gradient(to bottom, floralwhite, antiquewhite, white, goldenrod, transparent);
+}
+
+footer {
+  background-image: linear-gradient(to bottom, goldenrod, white, transparent);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  footer {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+  }
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2.7rem;
+  }
+  p {
+    font-size: 2.1rem;
+  }
+  a {
+    font-size: 1.4rem;
+    text-decoration: none;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 1.6rem;
+  }
+  a {
+    font-size: 1.8rem;
+    text-decoration: none;
+  }
+}
+.tituloBoots {
+  font-size: 28px;
+  color: goldenrod;
+}
+
+.tituloAzul {
+  font-size: 40px;
+  color: blue;
+}
+
+.copy {
+  font-size: smaller;
+  padding-top: 100px;
+}
+
+h5 {
+  font-size: 26px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.textoConfirmacion {
+  color: white;
+  font-size: 20px;
+}
+
+header {
+  background-image: linear-gradient(to bottom, goldenrod, white, transparent);
+}
+header nav {
+  font-size: larger;
+  padding: 10px;
+}
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+header nav ul li {
+  list-style-type: none;
+  padding: 5px;
+}
+header nav ul li a {
+  text-decoration: none;
+  transition: all 2.2s;
+}
+header nav ul li a:hover {
+  color: blue;
+  background-color: goldenrod;
+  border-radius: 15px;
+}
+
+/*# sourceMappingURL=style.css.map */

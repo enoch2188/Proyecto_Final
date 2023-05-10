@@ -1,0 +1,47 @@
+.grid{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:3, auto;
+    // box-sizing: border-box;
+    // justify-content: center;
+}
+@media only screen and (min-width:1023px){
+    main{
+    display:grid;
+    grid-template-areas: 
+    "imgTitulo imgTitulo" 
+    "titulo titulo"
+    "texto texto"
+    "parrafo imgMain";
+    grid-template-columns: 50% 50%; 
+    grid-template-rows: repeat(3, auto);
+    .imgTitulo{grid-area: imgTitulo;}
+    .titulo{grid-area: titulo;}
+    .texto{grid-area: parrafo;}
+    .imgMain{grid-area: imgMain;}
+    .foot {
+      color: gray;
+      padding-left: 109px;
+  }
+    }
+}
+
+// agregue para arreglar el footer centrado
+@media (max-width: 768px) {
+  .foot{
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+    .imgMain {
+        max-width: auto;
+        height: auto;
+        overflow: hidden;
+}
+}
+@media (max-width: 992px) {
+    .navbar-brand {
+      font-size: 1.2rem;
+    }
+  }

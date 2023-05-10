@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+
+body{
+    font-family: 'Nunito Sans', sans-serif;
+}
+@media only screen and (max-width: 768px){
+    h1{font-size: 3rem;}
+    h3{font-size: 2.7rem;}
+    p{font-size: 2.1rem;}
+    a{font-size: 1.4rem;
+    text-decoration: none;
+    text-align: center;}
+}
+
+@media only screen and (min-width: 1024px){
+    h1{font-size: 2.1rem;}
+    h3{font-size: 1.8rem;}
+    p{font-size: 1.6rem;}
+    a{font-size: 1.8rem;
+    text-decoration: none}
+}
+.tituloBoots{
+    font-size: 28px;
+    color: $goldenrod;
+}
+.tituloAzul {
+    font-size: 40px;
+    color: $tituloAzul;
+}
+.copy{
+    font-size: smaller;
+    padding-top: 100px;
+}
+
+h5 { 
+    font-size: 26px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.textoConfirmacion {
+    color: white;
+    font-size: 20px;
+}
