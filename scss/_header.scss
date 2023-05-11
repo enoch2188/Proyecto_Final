@@ -3,7 +3,6 @@ header{
     nav{ 
         font-size: larger; 
         padding:10px;
-        text-align: right;
         ul{
             display: flex;
             flex-wrap: wrap;
@@ -23,3 +22,7 @@ header{
         }  
     }
 }   
+ul li.active a {
+    color: #fff;
+    background-color: #333;
+  }

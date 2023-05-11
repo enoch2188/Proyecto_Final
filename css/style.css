@@ -65,6 +65,7 @@ img {
 
 .cardEquipos {
   background-color: dimgray;
+  padding-top: 25px;
 }
 
 div.imgTitulo img {
@@ -115,7 +116,7 @@ body {
 }
 @media only screen and (min-width: 1024px) {
   h1 {
-    font-size: 2.1rem;
+    font-size: 4.1rem;
   }
   h3 {
     font-size: 1.8rem;
@@ -176,6 +177,11 @@ header nav ul li a:hover {
   color: blue;
   background-color: goldenrod;
   border-radius: 15px;
+}
+
+ul li.active a {
+  color: #fff;
+  background-color: #333;
 }
 
 /*# sourceMappingURL=style.css.map */
