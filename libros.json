@@ -1,0 +1,38 @@
+[
+    {
+      "nombre": "El caño más bello del mundo",
+      "precio": 150,
+      "imagen": "img/Riquelme-Libro4.jpg",
+      "descripcion": "El caño más bello del mundo parte de una premisa, o, tal vez, de una hipótesis: la existencia de una filosofía futbolera de Juan Román Riquelme."
+    },
+    {
+      "nombre": "Historias de Riquelme",
+      "precio": 200,
+      "imagen": "img/Riquelme-Libro3.png",
+      "descripcion": "Este libro sobre Juan Román Riquelme tiene 365 historias, ideal para conocer un poco más al último enganche, todos los días del año."
+    },
+    {
+      "nombre": "Los 10 de Boca",
+      "precio": 180,
+      "imagen": "img/libro7.webp",
+      "descripcion": "La pelota, siempre al Diez. Marquen al Diez. Dame la Diez. En fútbol, hoy, ayer y por los siglos de los siglos, eternamente el Diez."
+    },
+    {
+      "nombre": "El Torero",
+      "precio": 220,
+      "imagen": "img/Riquelme-Libro2.png",
+      "descripcion": "\"Investigar la vida de Riquelme es un trabajo complicado. Detrás de la fachada de la sencillez, de sus costumbres de pibe de barrio, hay un hombre que obliga a mirar muy bien las dos caras de la realidad."
+    },
+    {
+      "nombre": "Riquelme 365 Historias",
+      "precio": 190,
+      "imagen": "img/Riquelme-Libro.jpg",
+      "descripcion": "El último Diez en este gran libro que resume su vida. Y su obra. El potrero pelado, la canchita de Baby, la formación en Argentinos, la gloria boquense."
+    },
+    {
+      "nombre": "De Riquelme a Messi",
+      "precio": 250,
+      "imagen": "img/Riquelme-Libro5.jpg",
+      "descripcion": "El título del libro hace referencia al relevo generacional que eventualmente tomaría Lionel Messi, protagonista de un segundo libro a publicarse en un futuro próximo."
+    }
+  ]
