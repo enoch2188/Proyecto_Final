@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const librosContainer = document.getElementById("librosContainer");
+  
   fetch("libros.json")
     .then((response) => response.json())
     .then((data) => {
-      const librosContainer = document.getElementById("librosContainer");
       data.forEach((libro) => {
         const cardHTML = `
           <div class="col-md-4" style="padding-bottom: 25px;">
@@ -19,18 +20,27 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         librosContainer.innerHTML += cardHTML;
       });
+
+      const storedCarrito = localStorage.getItem("carrito");
+      if (storedCarrito) {
+        carrito.push(...JSON.parse(storedCarrito));
+        mostrarCarrito();
+        calcularTotalCarrito();
+      }
     })
     .catch((error) => {
       console.error("Error al cargar los datos:", error);
     });
 
   const carrito = [];
+  let descuentoAplicado = false; // Agrega esta línea para el descuento
 
-  class Libro {
-    constructor(nombre, precio, cantidad) {
-      this.nombre = nombre;
-      this.precio = precio;
-      this.cantidad = cantidad || 1;
+  function aplicarDescuento(porcentaje) {
+    if (!descuentoAplicado) {
+      carrito.forEach((libro) => {
+        libro.precio = libro.precio * (1 - porcentaje);
+      });
+      descuentoAplicado = true;
     }
   }
 
@@ -40,6 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const libroEnCarrito = carrito.find((libro) => libro.nombre === nombre);
 
+    if (!descuentoAplicado) {
+      const claveDescuento = prompt("Ingresa la palabra clave para obtener un descuento:");
+
+      if (claveDescuento && claveDescuento.toLowerCase() === "riquelme") {
+        aplicarDescuento(0.21); // Aplicar un 21% de descuento
+      }
+    }
+
     if (libroEnCarrito) {
       libroEnCarrito.cantidad += 1;
     } else {
@@ -48,6 +66,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mostrarCarrito();
     calcularTotalCarrito();
+  }
+
+
+  class Libro {
+    constructor(nombre, precio, cantidad) {
+      this.nombre = nombre;
+      this.precio = precio;
+      this.cantidad = cantidad || 1;
+    }
+  }
+
+  function aplicarDescuento(porcentaje) {
+    if (!descuentoAplicado) {
+      carrito.forEach((libro) => {
+        libro.precio = libro.precio * (1 - porcentaje);
+      });
+
+      mostrarCarrito();
+      calcularTotalCarrito();
+    }
   }
 
   const botonesAgregarCarrito = document.querySelectorAll(".btn-agregar-carrito");
@@ -63,11 +101,14 @@ document.addEventListener("DOMContentLoaded", () => {
     carrito.forEach((libro, index) => {
       const itemCarrito = document.createElement("li");
       itemCarrito.innerHTML = `
-        ${libro.nombre} - Precio: $${libro.precio} - Cantidad: ${libro.cantidad}
+        ${libro.nombre} - Precio: $${libro.precio.toFixed(2)} - Cantidad: ${libro.cantidad}
         <button class="btn-eliminar-carrito" data-index="${index}">Eliminar</button>
       `;
       listaCarrito.appendChild(itemCarrito);
     });
+
+    // Guardar carrito en localStorage
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 
     const botonesEliminarCarrito = document.querySelectorAll(".btn-eliminar-carrito");
 
@@ -86,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function calcularTotalCarrito() {
     const totalCarrito = document.getElementById("totalCarrito");
     const total = carrito.reduce((suma, libro) => suma + libro.precio * libro.cantidad, 0);
-    totalCarrito.textContent = total;
+    totalCarrito.textContent = total.toFixed(2);
   }
 
   function finalizarCompra() {
@@ -97,6 +138,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const botonFinalizarCompra = document.getElementById("btn-finalizar-compra");
-
   botonFinalizarCompra.addEventListener("click", finalizarCompra);
 });
